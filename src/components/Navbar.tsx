@@ -176,7 +176,18 @@ const Navbar: React.FC = () => {
                   About
                 </NavLink>
                 <NavLink
-                  to="/services"
+                to="/exams"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `text-gray-600 hover:text-[#78846f]  ${
+                    isActive ? "font-normal text-blue-500" : ""
+                  }`
+                }
+                >
+                  Exams
+                </NavLink>
+                <NavLink
+                  to="/pricing"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
                     `text-gray-600 hover:text-[#78846f]  ${
@@ -184,8 +195,41 @@ const Navbar: React.FC = () => {
                     }`
                   }
                 >
-                  Services
+                  Pricing
                 </NavLink>
+              <NavLink 
+              to="/leaderboard"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `text-gray-600 hover:text-[#78846f]  ${
+                  isActive ? "font-normal text-blue-500" : ""
+                }`
+              }
+              >
+                Leaderboard
+              </NavLink>
+              <NavLink
+              to="/register"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `text-gray-600 hover:text-[#78846f]  ${
+                  isActive ? "font-normal text-blue-500" : ""
+                }`
+              }
+              >
+                Register
+              </NavLink>
+              <NavLink
+              to="/login"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `text-gray-600 hover:text-[#78846f]  ${
+                  isActive ? "font-normal text-blue-500" : ""
+                }`
+              }
+              >
+                Login
+              </NavLink>
                 <NavLink
                   to="/contact"
                   onClick={() => setIsOpen(false)}
