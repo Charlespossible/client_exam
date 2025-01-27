@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
                   to="/"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `text-gray-600 hover:text-[#78846f]  ${
+                    `text-[#97c966] hover:text-[#78846f]  ${
                       isActive ? "font-normal text-blue-500" : ""
                     }`
                   }
