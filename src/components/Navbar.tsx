@@ -158,7 +158,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
                     `text-[#97c966] hover:text-[#78846f]  ${
-                      isActive ? "font-normal text-blue-500" : ""
+                      isActive ? "font-normal text-[#97c966]" : ""
                     }`
                   }
                 >
@@ -168,8 +168,8 @@ const Navbar: React.FC = () => {
                   to="/about"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `text-gray-600 hover:text-[#78846f]  ${
-                      isActive ? "font-normal text-blue-500" : ""
+                    `text-[#97c966] hover:text-[#78846f]  ${
+                      isActive ? "font-normal text-[#97c966]" : ""
                     }`
                   }
                 >
