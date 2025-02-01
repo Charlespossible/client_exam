@@ -59,6 +59,16 @@ const Navbar: React.FC = () => {
             </NavLink>
 
             <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                `font-normal text-lg text-white hover:text-[#78846f]  ${
+                  isActive ? "font-normal text-blue-500" : ""
+                }`
+              }
+            >
+              Dashboard
+            </NavLink>
+            <NavLink
               to="/pricing"
               className={({ isActive }) =>
                 `font-normal text-lg text-white hover:text-[#78846f]  ${
