@@ -1,16 +1,16 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Exam from '../components/Exam'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Exam from "../components/Exam";
 
 const Exams: React.FC = () => {
   return (
     <div>
-      <Navbar /> 
+      <Navbar />
       <Exam />
       <Footer />
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Exams
+export default Exams;

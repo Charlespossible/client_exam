@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { RegistrationFormData, RegistrationFormProps } from "../types/RegistrationForm";
+import {
+  RegistrationFormData,
+  RegistrationFormProps,
+} from "../types/RegistrationForm";
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -90,8 +93,14 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center text-[#97c966] mb-6">Register</h1>
-        <form onSubmit={handleSubmit} className="space-y-4" aria-label="Registration Form">
+        <h1 className="text-2xl font-bold text-center text-[#97c966] mb-6">
+          Register
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+          aria-label="Registration Form"
+        >
           {/* First Name */}
           <div>
             <label htmlFor="firstName" className="block text-gray-700">
@@ -108,7 +117,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
+            {errors.firstName && (
+              <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+            )}
           </div>
 
           {/* Last Name */}
@@ -127,7 +138,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
+            {errors.lastName && (
+              <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -146,7 +159,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
 
           {/* Phone Number */}
@@ -165,7 +180,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>}
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+            )}
           </div>
 
           {/* Referer (Optional) */}
@@ -200,7 +217,9 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+            )}
           </div>
 
           {/* Confirm Password */}
@@ -219,7 +238,11 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
+            {errors.confirmPassword && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.confirmPassword}
+              </p>
+            )}
           </div>
 
           {/* Submit Button */}

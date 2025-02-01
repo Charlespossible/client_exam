@@ -6,7 +6,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
     emailOrPhone: "",
     password: "",
   });
-  const [errors, setErrors] = useState<{ emailOrPhone?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{
+    emailOrPhone?: string;
+    password?: string;
+  }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -22,12 +25,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
     const newErrors: { emailOrPhone?: string; password?: string } = {};
 
-    if (!emailRegex.test(data.emailOrPhone) && !phoneRegex.test(data.emailOrPhone)) {
+    if (
+      !emailRegex.test(data.emailOrPhone) &&
+      !phoneRegex.test(data.emailOrPhone)
+    ) {
       newErrors.emailOrPhone = "Please enter a valid email or phone number.";
     }
 
     if (!passwordRegex.test(data.password)) {
-      newErrors.password = "Password must be at least 8 characters long and include uppercase, lowercase, and numbers.";
+      newErrors.password =
+        "Password must be at least 8 characters long and include uppercase, lowercase, and numbers.";
     }
 
     setErrors(newErrors);
@@ -51,8 +58,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-4 sm:p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center text-[#97c966] mb-6">Login</h1>
-        <form onSubmit={handleSubmit} className="space-y-4" aria-label="Login Form">
+        <h1 className="text-2xl font-bold text-center text-[#97c966] mb-6">
+          Login
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+          aria-label="Login Form"
+        >
           <div>
             <label htmlFor="emailOrPhone" className="block text-[#78846f] mb-4">
               Email or Phone Number
@@ -68,7 +81,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               required
               aria-required="true"
             />
-            {errors.emailOrPhone && <p className="text-red-500 text-sm mt-1">{errors.emailOrPhone}</p>}
+            {errors.emailOrPhone && (
+              <p className="text-red-500 text-sm mt-1">{errors.emailOrPhone}</p>
+            )}
           </div>
 
           <div>
@@ -95,7 +110,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+            )}
           </div>
 
           <div>

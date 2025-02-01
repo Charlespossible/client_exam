@@ -1,7 +1,7 @@
-import React from 'react'
-import PricingTable from '../components/PricingTable'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import React from "react";
+import PricingTable from "../components/PricingTable";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Pricing: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Pricing: React.FC = () => {
       <PricingTable />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Pricing
+export default Pricing;

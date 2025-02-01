@@ -1,5 +1,5 @@
-import React from 'react';
-import type { Testimonial } from '../types/testimonial';
+import React from "react";
+import type { Testimonial } from "../types/testimonial";
 
 interface TestimonialProps {
   testimonials: Testimonial[];
@@ -31,7 +31,9 @@ const Testimonial: React.FC<TestimonialProps> = ({ testimonials }) => {
               {testimonial.name}
             </h3>
             <p className="text-sm text-[#97c966] ">{testimonial.role}</p>
-            <p className="mt-3 text-[#78846f] italic">"{testimonial.message}"</p>
+            <p className="mt-3 text-[#78846f] italic">
+              "{testimonial.message}"
+            </p>
           </div>
         ))}
       </div>

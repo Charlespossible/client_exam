@@ -6,7 +6,7 @@ import Testimonial from "../components/Testimonials";
 import { testimonials } from "../data/testimonials";
 import Footer from "../components/Footer";
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Navbar />

@@ -1,16 +1,16 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import ContactUs from '../components/ContactUs'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ContactUs from "../components/ContactUs";
 
-const Contact:React.FC= () => {
+const Contact: React.FC = () => {
   return (
     <div>
-      <Navbar /> 
+      <Navbar />
       <ContactUs />
       <Footer />
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;
