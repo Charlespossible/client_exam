@@ -1,9 +1,8 @@
 import React from "react";
-//import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { FaChartLine, FaTrophy, FaClipboardList } from "react-icons/fa";
 import Sidebar from "../components/Sidebar";
 import StatsCard from "../components/StatsCard";
-//import Profile from "../components/profile";
+
 
 const Dashboard: React.FC = () => {
   return (
