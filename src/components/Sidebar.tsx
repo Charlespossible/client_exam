@@ -19,17 +19,17 @@ const Sidebar: React.FC = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="exam-history" className="flex items-center space-x-3 hover:text-gray-300">
+            <NavLink to="/exam-history" className="flex items-center space-x-3 hover:text-gray-300">
               <FaClipboardList /> <span>Exam History</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="leaderboard" className="flex items-center space-x-3 hover:text-gray-300">
+            <NavLink to="user-leaderboard" className="flex items-center space-x-3 hover:text-gray-300">
               <FaTrophy /> <span>Leaderboard</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/settings" className="flex items-center space-x-3 hover:text-gray-300">
+            <NavLink to="/settings" className="flex items-center space-x-3 hover:text-gray-300">
               <FaCog /> <span>Settings</span>
             </NavLink>
           </li>

@@ -26,7 +26,6 @@ const Dashboard: React.FC = () => {
           <StatsCard icon={<FaClipboardList className="text-[#97c966] text-3xl" />} title="Exams Passed" value="9" />
         </main>
       </div>
-
       
     </div>
     
