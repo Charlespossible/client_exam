@@ -1,8 +1,8 @@
 import React from "react";
-import RegistrationForm from "../../components/RegistrationForm";
-import { RegistrationFormData } from "../../types/RegistrationForm";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import RegistrationForm from "../components/RegistrationForm";
+import { RegistrationFormData } from "../types/RegistrationForm";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Register: React.FC = () => {
   const handleRegister = (data: RegistrationFormData) => {

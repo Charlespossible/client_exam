@@ -1,9 +1,9 @@
 // src/pages/Login.tsx
 import React from "react";
-import LoginForm from "../../components/LoginForm";
-import { LoginFormData } from "../../types/LoginForm";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import LoginForm from "../components/LoginForm";
+import { LoginFormData } from "../types/LoginForm";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Login: React.FC = () => {
   const handleLogin = (data: LoginFormData) => {
