@@ -14,6 +14,7 @@ import Myperfomance from "./pages/Myperfomance";
 import MyexamHistory from "./pages/MyexamHistory";
 import MyuserLeaderboard from "./pages/MyuserLeaderboard";
 import Mysetting from "./pages/Mysetting";
+import Admin from "./pages/Admin";
 
 const App: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const App: React.FC = () => {
       <Route path="/exam-history" element={<MyexamHistory />} />
       <Route path="/user-leaderboard" element={<MyuserLeaderboard />} />
       <Route path="/settings" element={<Mysetting />} />
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 };
