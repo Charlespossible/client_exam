@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Exam {
   name: string;
@@ -16,39 +18,39 @@ const exams: Exam[] = [
 const Exam: React.FC = () => {
   const [selectedExam, setSelectedExam] = useState<string | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
-  const [selectedYears, setSelectedYears] = useState<number[]>([]); // Years for past questions
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Authentication state
+  const [selectedYears, setSelectedYears] = useState<number[]>([]); 
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); 
 
   const handleExamClick = (examName: string) => {
-    setSelectedExam(examName === selectedExam ? null : examName); // Toggle dropdown
-    setSelectedSubject(null); // Reset subject on new exam click
-    setSelectedYears([]); // Clear years when a new exam is clicked
+    setSelectedExam(examName === selectedExam ? null : examName);
+    setSelectedSubject(null); 
+    setSelectedYears([]); 
   };
 
   const handleSubjectClick = (subject: string) => {
     setSelectedSubject(subject);
-    // Generate years for the selected subject
     setSelectedYears(Array.from({ length: 39 }, (_, i) => 1982 + i));
   };
 
   const handleYearClick = (year: number) => {
     if (!isAuthenticated) {
-      alert("You must log in to access this content!");
+      toast.error("You must log in to access this content!");
       return;
     }
-    alert(`Accessing content for ${selectedSubject} ${year}`);
-    // Additional logic for accessing the content can be implemented here
+    toast.success(`Accessing content for ${selectedSubject} ${year}`);
   };
 
   const handleLogin = () => {
-    setIsAuthenticated(true); // Simulating login
-    alert("You are now logged in!");
+    setIsAuthenticated(true);
+    toast.success("You are now logged in!");
   };
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
+      <ToastContainer />
       <h1 className="text-3xl font-bold text-center mb-6">Choose Your Exam</h1>
       <hr className="border-b-2 border-[#97c966] mt-8 mb-12 w-10 mx-auto"></hr>
+
       {/* Exams */}
       <div className="flex flex-wrap justify-center gap-4">
         {exams.map((exam) => (
@@ -107,10 +109,9 @@ const Exam: React.FC = () => {
               </div>
             ))}
           </div>
-
         </div>
       )}
-      <div className="mt-6 ">
+      <div className="mt-6">
         <hr className="border-b-2 border-[#97c966] mt-8 mb-16 w-96 mx-auto"></hr>
       </div>
 
