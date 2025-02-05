@@ -1,5 +1,5 @@
 import React from 'react'
-import UserLeaderboard from '../components/userLeaderboard'
+import UserLeaderboard from '../components/UserLeaderboard'
 
 const MyuserLeaderboard: React.FC = () => {
   return (

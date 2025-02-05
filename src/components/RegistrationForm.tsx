@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  RegistrationFormData,
+  IREGISTER,
   RegistrationFormProps,
 } from "../types/RegistrationForm";
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
-  const [formData, setFormData] = useState<RegistrationFormData>({
+  const [formData, setFormData] = useState<IREGISTER>({
     firstName: "",
     lastName: "",
     email: "",
