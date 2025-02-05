@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import { LoginFormData, LoginFormProps } from "../types/LoginForm";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
+const LoginForm: React.FC<LoginFormProps> = () => {
   const [formData, setFormData] = useState<LoginFormData>({
-    emailOrPhone: "",
+    email: "",
     password: "",
   });
   const [errors, setErrors] = useState<{
-    emailOrPhone?: string;
+    email?: string;
     password?: string;
   }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,16 +25,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
   const validateForm = (data: LoginFormData): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\+?[0-9]{10,15}$/;
+    //const phoneRegex = /^\+?[0-9]{10,15}$/;
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-    const newErrors: { emailOrPhone?: string; password?: string } = {};
+    const newErrors: { email?: string; password?: string } = {};
 
     if (
-      !emailRegex.test(data.emailOrPhone) &&
-      !phoneRegex.test(data.emailOrPhone)
+      !emailRegex.test(data.email) 
+     
     ) {
-      newErrors.emailOrPhone = "Please enter a valid email or phone number.";
+      newErrors.email = "Please enter a valid email or phone number.";
     }
 
     if (!passwordRegex.test(data.password)) {
@@ -46,9 +51,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
     if (validateForm(formData)) {
       setIsSubmitting(true);
       try {
-        await onSubmit(formData); // Simulate async submission
-      } catch (error) {
-        console.error("Submission error:", error);
+        const response = await axios.post("http://localhost:5000/api/auth/login", formData);
+        toast.success(response.data.message || "Login successful!");
+        setTimeout(() => navigate("/exam"), 6000); 
+      } catch (error: any) {
+        toast.error(error.response?.data?.message || "Login failed");
       } finally {
         setIsSubmitting(false);
       }
@@ -68,21 +75,21 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         >
           <div>
             <label htmlFor="emailOrPhone" className="block text-[#78846f] mb-4">
-              Email or Phone Number
+              Email Address
             </label>
             <input
               type="text"
-              id="emailOrPhone"
-              name="emailOrPhone"
-              value={formData.emailOrPhone}
+              id="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email or phone number"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#97c966]"
               required
               aria-required="true"
             />
-            {errors.emailOrPhone && (
-              <p className="text-red-500 text-sm mt-1">{errors.emailOrPhone}</p>
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
             )}
           </div>
 
@@ -133,6 +140,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           </a>
         </p>
       </div>
+      <ToastContainer position="top-right" autoClose ={3000} />
     </div>
   );
 };

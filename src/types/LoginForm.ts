@@ -1,5 +1,5 @@
 export interface LoginFormData {
-    emailOrPhone: string;
+    email: string;
     password: string;
   }
   
