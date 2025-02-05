@@ -53,7 +53,7 @@ const LoginForm: React.FC<LoginFormProps> = () => {
       try {
         const response = await axios.post("http://localhost:5000/api/auth/login", formData);
         toast.success(response.data.message || "Login successful!");
-        setTimeout(() => navigate("/exam"), 6000); 
+        setTimeout(() => navigate("/otp-verification"), 6000); 
       } catch (error: any) {
         toast.error(error.response?.data?.message || "Login failed");
       } finally {
@@ -140,7 +140,7 @@ const LoginForm: React.FC<LoginFormProps> = () => {
           </a>
         </p>
       </div>
-      <ToastContainer position="top-right" autoClose ={3000} />
+      <ToastContainer position="top-right" autoClose ={6000} />
     </div>
   );
 };

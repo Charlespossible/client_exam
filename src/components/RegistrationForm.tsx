@@ -234,7 +234,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = () => {
           </a>
         </p>
       </div>
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={6000} />
     </div>
   );
 };

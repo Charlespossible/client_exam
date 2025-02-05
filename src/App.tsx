@@ -15,6 +15,7 @@ import MyexamHistory from "./pages/MyexamHistory";
 import MyuserLeaderboard from "./pages/MyuserLeaderboard";
 import Mysetting from "./pages/Mysetting";
 import Admin from "./pages/Admin";
+import OTPVerificationPage from "./pages/OTPVerificationPage";
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const App: React.FC = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Myprofile />} />
+      <Route path="/otp-verification" element={<OTPVerificationPage />} />
       <Route path="/performance" element={<Myperfomance />} />
       <Route path="/exam-history" element={<MyexamHistory />} />
       <Route path="/user-leaderboard" element={<MyuserLeaderboard />} />
